@@ -116,14 +116,6 @@
           :name="editorName(editor)"
         />
       </div>
-      <QuillEditor
-        v-if="reglamentContent.length && !isTesting"
-        v-model:content="reglamentContent"
-        content-type="html"
-        :read-only="true"
-        :toolbar="['']"
-        class="h-auto mx-auto mb-5 border-none 2xl:px-[145px] mt-[35px]"
-      />
 
       <div
         v-if="!isEditing && !isTesting && questions.length > 0 && !isContributor && shouldShowButton"
@@ -206,7 +198,6 @@
 </template>
 
 <script>
-import { QuillEditor } from '@vueup/vue-quill'
 import * as REGLAMENTS from '@/store/actions/reglaments.js'
 
 import ReglamentTestLimit from '@/components/Reglaments/ReglamentTestLimit.vue'
@@ -225,7 +216,6 @@ export default {
     ReglamentTest,
     ReglamentContentEditor,
     // NavBarButtonsReglament,
-    QuillEditor,
     ReglamentSmallButton,
     ReglamentEditLimit,
     ReglamentTestLimit,
@@ -420,9 +410,6 @@ export default {
 }
 </script>
 <style>
-.ql-snow.ql-container {
-  border: none;
-}
 .ql-snow .ql-tooltip {
   @apply z-30
 }
@@ -432,27 +419,6 @@ export default {
 .ql-snow .ql-tooltip[data-mode=video]::before {
   content: "Введите ссылку:";
 }
-
-.ql-snow.ql-container:not(.ql-disabled) {
-  background: #f4f5f7;
-}
-
-/*.ql-toolbar.ql-snow {*/
-/*  position: sticky;*/
-/*  top: 83px;*/
-/*  padding: 20px 0;*/
-/*  z-index: 5;*/
-/*  background: #f4f5f7;*/
-/*  border: none;*/
-/*}*/
-
-.ql-editor[contenteditable="true"] {
-  border-top-left-radius: 28px;
-  border-top-right-radius: 28px;
-  border-top: 28px solid white;
-  background: #fff;
-}
-
 .ql-editor > * {
   word-break: break-word;
   overflow: hidden;
