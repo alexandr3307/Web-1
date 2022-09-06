@@ -437,14 +437,14 @@ export default {
   background: #f4f5f7;
 }
 
-.ql-toolbar.ql-snow {
-  position: sticky;
-  top: 83px;
-  padding: 20px 0;
-  z-index: 5;
-  background: #f4f5f7;
-  border: none;
-}
+/*.ql-toolbar.ql-snow {*/
+/*  position: sticky;*/
+/*  top: 83px;*/
+/*  padding: 20px 0;*/
+/*  z-index: 5;*/
+/*  background: #f4f5f7;*/
+/*  border: none;*/
+/*}*/
 
 .ql-editor[contenteditable="true"] {
   border-top-left-radius: 28px;
